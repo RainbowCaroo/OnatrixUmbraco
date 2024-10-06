@@ -1,0 +1,51 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = null;
+	var keywordsList = Model.Value<IEnumerable<string>>("pageKeywords");
+	var keywords = keywordsList != null ? string.Join(", ", keywordsList) : "";
+}
+
+<html>
+	<head>
+		<title>Onatrix | @ViewBag.Title</title>
+		<meta name="description" content="@Model.Value("pageDescription")">
+		<meta name="keywords" content="@keywords">
+	</head>
+	<body>
+		<header>
+			<section class="topbar bg-primary">
+				<div class="container">
+                    <div class="address">Klarabergsviadukten 90, 111 64 Stockholm</div>
+                    <div class="socialmedia">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+			</section>
+			<div class="navbar bg-light">
+				<div class="container">
+					<a class="logo" href="/">
+						<img src="/images/logotype">
+					</a>
+					<nav>
+						<a class="nav-link" href="/about">About</a>
+						<a class="nav-link" href="/services">Services</a>
+						<a class="nav-link" href="/projects">Projects</a>
+						<a class="nav-link" href="/contact">Contact</a>
+					</nav>
+					<div class="search"><i class="fa-solid fa-magnifying-glass"></i></div>
+				</div>
+			</div>
+		</header>
+		<main>
+		@RenderBody()
+		</main>
+		<footer class="bg-dark">
+			<div class="container">
+				<p class="copyright">© Onatrix. All Rights Reserved. Credits to <a href="https://themeforest.net/user/themesflat/portfolio">Themesflat</a></p>
+			</div>
+		</footer>
+	</body>	
+</html>
