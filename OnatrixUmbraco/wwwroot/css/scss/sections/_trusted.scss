@@ -1,0 +1,18 @@
+.trusted {
+    .container {
+        padding-top: 5rem;
+
+        .trusted-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 4rem;
+
+            h2, p {
+                text-align: center;
+                width: 60%;
+                padding-bottom: 2rem;
+            }
+        }
+    }
+}

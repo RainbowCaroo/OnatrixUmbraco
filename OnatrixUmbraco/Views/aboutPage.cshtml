@@ -3,6 +3,127 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model.Value("pageTitle");
+
+    var contactImage = Model?.Value<IPublishedContent>("contactImage")?.Url() ?? "";
+    var founderImage = Model?.Value<IPublishedContent>("founderImage")?.Url() ?? "";
+    var reviewImageStars = Model?.Value<IPublishedContent>("reviewImageStars")?.Url() ?? "";
+    var reviewImage = Model?.Value<IPublishedContent>("reviewImage")?.Url() ?? "";
+    var memberBox1Image = Model?.Value<IPublishedContent>("memberBox1Image")?.Url() ?? "";
+    var memberBox2Image = Model?.Value<IPublishedContent>("memberBox2Image")?.Url() ?? "";
+    var memberBox3Image = Model?.Value<IPublishedContent>("memberBox3Image")?.Url() ?? "";
+    var memberBox4Image = Model?.Value<IPublishedContent>("memberBox4Image")?.Url() ?? "";
+    var memberBox5Image = Model?.Value<IPublishedContent>("memberBox5Image")?.Url() ?? "";
+    var memberBox6Image = Model?.Value<IPublishedContent>("memberBox6Image")?.Url() ?? "";
+    var memberBox7Image = Model?.Value<IPublishedContent>("memberBox7Image")?.Url() ?? "";
+        
 }
 
-<h1>@Model.Value("title")</h1>
+<section class="page-header bg-gray">
+    <div class="container">
+        <h2>@Model?.Value("headlineHeadline")</h2>
+        <div class="page-nav">
+            <p>@Model?.Value("headlineTextHome")</p>
+            <p>@Model?.Value("headlineArrow1")</p>
+            <span>@Model?.Value("headlineTextPage")</span>
+        </div>
+    </div>
+</section>
+<section class="founder-info">
+    <div class="container">
+        <div class="ceo-image">
+            <img src="@founderImage" alt="@Model?.Value("founderCeoText")">
+            <h5>@Model?.Value("founderCeoText")</h5>
+        </div>
+        <div class="founder-text">
+            <blockquote>@Model?.Value("founderQuote")</blockquote>
+            <p>@Model?.Value("founderText1")</p>
+            <p>@Model?.Value("founderText2")</p>
+            <p>@Model?.Value("founderText3")</p>
+            <p>@Model?.Value("founderText4")</p>
+            <p>@Model?.Value("founderText5")</p>
+            <p>@Model?.Value("founderText6")</p>
+            <p>@Model?.Value("founderText7")</p>
+        </div>
+    </div>
+</section>
+<section class="review-kevin bg-gray">
+    <div class="container">
+        <div class="review">
+            <h6>@Model?.Value("reviewTitle")</h6>
+            <h2>@Model?.Value("reviewHeadline")</h2>
+            <h5 class="gray-text">@Model?.Value("reviewText")</h5>
+            <img src="@reviewImageStars" alt="">
+            <p>@Model?.Value("reviewName")</p>
+            <h5>@Model?.Value("reviewCompany")</h5>
+        </div>
+                                                
+    </div>
+    <img src="@reviewImage" alt="@Model?.Value("reviewName")">
+</section>
+<section class="our-experts">
+    <div class="container">
+        <div class="headline">
+            <h6>@Model?.Value("memberTitle")</h6>
+            <h2>@Model?.Value("memberHeadline")</h2>
+        </div>
+        <div class="team-row-1">
+            <div class="member">
+                <img src="@memberBox1Image" alt="">
+                <p>@Model?.Value("memberBox1Name")</p>
+                <h6>@Model?.Value("memberBox1Position")</h6>
+            </div>
+            <div class="member">
+                <img src="@memberBox2Image" alt="">
+                <p>@Model?.Value("memberBox2Name")</p>
+                <h6>@Model?.Value("memberBox2Position")</h6>
+            </div>
+            <div class="member">
+                <img src="@memberBox3Image" alt="">
+                <p>@Model?.Value("memberBox3Name")</p>
+                <h6>@Model?.Value("memberBox3Position")</h6>
+            </div>
+        </div>
+        <div class="team-row-2">
+            <div class="member">
+                <img src="@memberBox4Image" alt="">
+                <p>@Model?.Value("memberBox4Name")</p>
+                <h6>@Model?.Value("memberBox4Position")</h6>
+            </div>
+            <div class="member">
+                <img src="@memberBox5Image" alt="">
+                <p>@Model?.Value("memberBox5Name")</p>
+                <h6>@Model?.Value("memberBox5Position")</h6>
+            </div>
+            <div class="member">
+                <img src="@memberBox6Image" alt="">
+                <p>@Model?.Value("memberBox6Name")</p>
+                <h6>@Model?.Value("memberBox6Position")</h6>
+            </div>
+            <div class="member">
+                <img src="@memberBox7Image" alt="">
+                <p>@Model?.Value("memberBox7Name")</p>
+                <h6>@Model?.Value("memberBox7Position")</h6>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="our-contact bg-gray">
+    <div class="container">
+        <img src="@contactImage" alt="">
+        <div class="contact">
+            <h2>@Model?.Value("contactHeadline")</h2>
+            <div class="contact-info">
+                <p><span><i class="fa-solid fa-location-dot"></i></span>@Model?.Value("contactTextOffice")</p>
+                <p class="cursive-text">@Model?.Value("contactLocation")</p>
+            </div>
+            <div class="contact-info">
+                <p><span><i class="fa-solid fa-phone-flip"></i></span>@Model?.Value("contactTextPhone")</p>
+                <p class="cursive-text">@Model?.Value("contactPhone")</p>
+            </div>
+            <div class="contact-info">
+                <p><span><i class="fa-regular fa-envelope"></i></span>@Model?.Value("contactTextEmail")</p>
+                <p class="cursive-text">@Model?.Value("contactEmail")</p>
+            </div>
+        </div>
+    </div>
+</section>

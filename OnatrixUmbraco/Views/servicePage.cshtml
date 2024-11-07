@@ -1,0 +1,100 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model.Value("pageTitle");
+
+    var contactImage = Model?.Value<IPublishedContent>("contactImage")?.Url() ?? "";
+    var box1Image = Model?.Value<IPublishedContent>("box1Image")?.Url() ?? "";
+	var box2Image = Model?.Value<IPublishedContent>("box2Image")?.Url() ?? "";
+	var box3Image = Model?.Value<IPublishedContent>("box3Image")?.Url() ?? "";
+	var box4Image = Model?.Value<IPublishedContent>("box4Image")?.Url() ?? "";
+	var box5Image = Model?.Value<IPublishedContent>("box5Image")?.Url() ?? "";
+	var box6Image = Model?.Value<IPublishedContent>("box6Image")?.Url() ?? "";
+}
+
+<section class="page-header bg-gray">
+    <div class="container">
+        <h2>@Model?.Value("headlineHeadline")</h2>
+        <div class="page-nav">
+            <p>@Model?.Value("headlineTextHome")</p>
+            <p>@Model?.Value("headlineArrow1")</p>
+            <span>@Model?.Value("headlineTextPage")</span>
+        </div>
+    </div>
+</section>
+<section class="our-services">
+    <div class="container">
+        <h2>@Model?.Value("servicesHeadline")</h2>
+		<div class="service-boxes">
+			<div class="box-content bg-light">
+				<a href="@Model?.Value("box1Url")">
+					<h5>@Model?.Value("box1Headline")</h5>
+					<img src="@box1Image" alt=""> 
+					<p>@Model?.Value("box1Text")</p>
+				</a>
+			</div>
+			<div class="box-content bg-light">
+				<a href="@Model?.Value("box2Url")">
+					<h5>@Model?.Value("box2Headline")</h5>
+					<img src="@box2Image" alt=""> 
+					<p>@Model?.Value("box2Text")</p>
+				</a>
+			</div>
+			<div class="box-content bg-light">
+				<a href="@Model?.Value("box3Url")">
+					<h5>@Model?.Value("box3Headline")</h5>
+					<img src="@box3Image" alt=""> 
+					<p>@Model?.Value("box3Text")</p>
+				</a>
+			</div>
+			<div class="box-content bg-light">
+				<a href="@Model?.Value("box4Url")">
+					<h5>@Model?.Value("box4Headline")</h5>
+					<img src="@box4Image" alt=""> 
+					<p>@Model?.Value("box4Text")</p>
+				</a>
+			</div>
+			<div class="box-content bg-light">
+				<a href="@Model?.Value("box5Url")">
+					<h5>@Model?.Value("box5Headline")</h5>
+					<img src="@box5Image" alt=""> 
+					<p>@Model?.Value("box5Text")</p>
+				</a>
+			</div>
+			<div class="box-content bg-light">
+				<a href="@Model?.Value("box6Url")">
+					<h5>@Model?.Value("box6Headline")</h5>
+					<img src="@box6Image" alt=""> 
+					<p>@Model?.Value("box6Text")</p>
+				</a>
+			</div>
+		</div>
+        <div class="service-pages">
+            <span>Prev</span>
+            <a href="">1</a>
+            <a href="">2</a>
+            <p>Next</p>
+        </div>
+    </div>
+</section>
+<section class="our-contact bg-gray">
+    <div class="container">
+        <img src="@contactImage" alt="">
+        <div class="contact">
+            <h2>@Model?.Value("contactHeadline")</h2>
+            <div class="contact-info">
+                <p><span><i class="fa-solid fa-location-dot"></i></span>@Model?.Value("contactTextOffice")</p>
+                <p class="cursive-text">@Model?.Value("contactLocation")</p>
+            </div>
+            <div class="contact-info">
+                <p><span><i class="fa-solid fa-phone-flip"></i></span>@Model?.Value("contactTextPhone")</p>
+                <p class="cursive-text">@Model?.Value("contactPhone")</p>
+            </div>
+            <div class="contact-info">
+                <p><span><i class="fa-regular fa-envelope"></i></span>@Model?.Value("contactTextEmail")</p>
+                <p class="cursive-text">@Model?.Value("contactEmail")</p>
+            </div>
+        </div>
+    </div>
+</section>

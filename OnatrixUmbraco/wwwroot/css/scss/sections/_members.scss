@@ -1,0 +1,40 @@
+.our-experts {
+    .container {
+        padding: 60px 0;
+        .headline {
+            width: 50%;
+            text-align: center;
+            justify-self: center;
+        }
+
+        .member {
+            border: 1px solid var(--color-gray);
+            
+            p {
+                font-size: larger;
+                font-weight: bold;
+                padding-bottom: 0;
+                padding-left: 2rem;
+                padding-top: 1rem;
+            }
+            h6 {
+                color: var(--color-primary-light);
+                font-weight: 200;
+                padding-left: 2rem;
+            }
+        }
+
+        .team-row-1 {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .team-row-2 {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+    }
+}

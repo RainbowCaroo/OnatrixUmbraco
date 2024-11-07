@@ -1,0 +1,13 @@
+footer {
+    .container {
+        padding-top: 1rem;
+        a {
+            color: var(--color-secondary);
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

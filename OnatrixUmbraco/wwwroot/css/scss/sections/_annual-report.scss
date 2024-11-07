@@ -1,0 +1,76 @@
+.annualreport {
+    .container {
+
+        .report-content {
+            width: 75%;
+            border-right: 1px solid var(--color-gray);
+            padding: 2rem 0;
+            padding-right: 3rem;
+            margin: 3rem 0;
+            
+
+            .report-info {
+                padding-bottom: 2rem;
+                h6 {
+                    color: var(--color-primary);
+                    padding-bottom: 1rem;
+                }
+                img {
+                    width: 100%;
+                }
+                .date {
+                    display: flex;
+                    align-items: center;
+                    color: var(--color-primary-light);
+                    gap: 5px;
+                    padding-bottom: 2rem;
+                }
+            }
+
+            .report-suggestions {
+                li {
+                    padding-bottom: 1rem;
+                }
+            }
+
+            .report-section1 {
+                display: flex;
+                gap: 1rem;
+                padding-bottom: 2rem;
+            }
+
+            .report-section2 {
+                padding-bottom: 2rem;
+                img {
+                    padding-top: 1rem;
+                }
+            }
+
+            .report-section3 {
+                padding-bottom: 3rem;
+            }
+
+            .report-tags {
+                display: flex;
+                align-items: center;
+                padding-bottom: 1rem;
+                gap: 1rem;
+
+                p {
+                    font-weight: bold;
+                    padding-top: 10px;
+                }
+
+                .btn {
+                    padding: 5px 10px;
+                    font-size: 13px;
+                    border-radius: 15px;
+
+                    &:hover {
+                        border: 1px solid var(--color-primary);
+                    }
+                }
+            }
+        }
+    }
+}

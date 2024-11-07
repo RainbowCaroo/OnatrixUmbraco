@@ -1,0 +1,89 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model.Value("pageTitle");
+
+    var contactImage = Model?.Value<IPublishedContent>("contactImage")?.Url() ?? "";
+    var riskImage1 = Model?.Value<IPublishedContent>("riskImage1")?.Url() ?? "";
+    var riskImage2 = Model?.Value<IPublishedContent>("riskImage2")?.Url() ?? "";
+}
+
+
+<section class="page-header bg-gray">
+    <div class="container">
+        <h2>@Model?.Value("headlineHeadline")</h2>
+        <div class="page-nav">
+            <p>@Model?.Value("headlineTextHome")</p>
+            <p>@Model?.Value("headlineArrow1")</p>
+            <span>@Model?.Value("headlineTextPage")</span>
+        </div>
+    </div>
+</section>
+<section class="riskmanagement">
+    <div class="container">
+        <div class="risk-content">
+            <img src="@riskImage1" alt="">
+            <div class="key-point">
+                <h4>@Model?.Value("riskKeyHeadline")</h4>
+                <ul>
+                    <li>@Model?.Value("riskKeyList1")</li>
+                    <li>@Model?.Value("riskKeyList2")</li>
+                    <li>@Model?.Value("riskKeyList3")</li>
+                </ul>
+            </div>
+            <div class="finance-plan">
+                <h4>@Model?.Value("riskFinanceHeadline")</h4>
+                <p>@Model?.Value("riskFinanceText1")</p>
+                <p>@Model?.Value("riskFinanceText2")</p>
+                <p>@Model?.Value("riskFinanceText3")</p>
+                <ul>
+                    <li>@Model?.Value("riskFinanceList1")</li>
+                    <li>@Model?.Value("riskFinanceList2")</li>
+                    <li>@Model?.Value("riskFinanceList3")</li>
+                </ul>
+                <p>@Model?.Value("riskFinanceText4")</p>
+                <p>@Model?.Value("riskFinanceText5")</p>
+            </div>
+            <img src="@riskImage2" alt="">
+            <div class="finance-help">
+                <h4>@Model?.Value("riskHelpHeadline")</h4>
+                <p>@Model?.Value("riskHelpText")</p>
+                <ul>
+                    <li>@Model?.Value("riskHelpList1")</li>
+                    <li>@Model?.Value("riskHelpList2")</li>
+                    <li>@Model?.Value("riskHelpList3")</li>
+                    <li>@Model?.Value("riskHelpList4")</li>
+                </ul>
+            </div>
+        </div>
+        <div class="risk-form">
+            <h4>@Model?.Value("riskFormHeadline")</h4>
+            <form action="">
+                <input id="form-name" type="text" placeholder="@Model?.Value("riskFormPlaceholder1")">
+                <input id="form-email" type="text" placeholder="@Model?.Value("riskFormPlaceholder2")">
+                <textarea name="question" id="form-area" cols="30" rows="10" placeholder="@Model?.Value("riskFormPlaceholder3")"></textarea>
+            </form>
+            <a href="" class="btn-primary">@Model?.Value("riskFormButtonText")</a>
+        </div>
+    </div>                    
+<section class="our-contact bg-gray">
+    <div class="container">
+        <img src="@contactImage" alt="">
+        <div class="contact">
+            <h2>@Model?.Value("contactHeadline")</h2>
+            <div class="contact-info">
+                <p><span><i class="fa-solid fa-location-dot"></i></span>@Model?.Value("contactTextOffice")</p>
+                <p class="cursive-text">@Model?.Value("contactLocation")</p>
+            </div>
+            <div class="contact-info">
+                <p><span><i class="fa-solid fa-phone-flip"></i></span>@Model?.Value("contactTextPhone")</p>
+                <p class="cursive-text">@Model?.Value("contactPhone")</p>
+            </div>
+            <div class="contact-info">
+                <p><span><i class="fa-regular fa-envelope"></i></span>@Model?.Value("contactTextEmail")</p>
+                <p class="cursive-text">@Model?.Value("contactEmail")</p>
+            </div>
+        </div>
+    </div>
+</section>

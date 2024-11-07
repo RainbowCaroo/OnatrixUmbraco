@@ -1,0 +1,36 @@
+.navbar {
+    .container {
+        display: grid;
+        justify-content: space-between;
+        align-items: center;
+        grid-template-columns: auto auto auto;
+        grid-template-areas:  "logo menu search";
+        padding: 20px 0 20px 0;
+        
+
+        .logo { grid-area: logo; }
+
+        .menu { 
+            grid-area: menu; 
+            display: flex;
+            gap: 5rem;
+
+            a {
+                color: var(--color-primary);
+                text-decoration: none;
+                font-weight: bold;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: var(--color-secondary);
+                }
+            }
+        }        
+
+        .search {
+            grid-area: search; 
+            display: block;
+
+        }
+    }
+}

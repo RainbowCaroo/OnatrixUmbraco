@@ -1,0 +1,91 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model.Value("pageTitle");
+
+    var contactImage = Model?.Value<IPublishedContent>("contactImage")?.Url() ?? "";
+    var juvaImage = Model?.Value<IPublishedContent>("juvaImage")?.Url() ?? "";
+    var juvaSection1Image = Model?.Value<IPublishedContent>("juvaSection1Image")?.Url() ?? "";
+    var juvaSection2Image = Model?.Value<IPublishedContent>("juvaSection2Image")?.Url() ?? "";
+}
+
+<section class="page-header bg-gray">
+    <div class="container">
+        <h2>@Model?.Value("headlineHeadline")</h2>
+        <div class="page-nav">
+            <p>@Model?.Value("headlineTextHome")</p>
+            <p>@Model?.Value("headlineArrow1")</p>
+            <span>@Model?.Value("headlineTextPage")</span>
+        </div>
+    </div>
+</section>
+<section class="annualreport">
+    <div class="container">
+        <div class="report-content">
+            <div class="report-info">
+                <p class="date"><i class="fa-regular fa-calendar-days"></i>@Model?.Value("juvaDate")</p>
+                <h6>@Model?.Value("juvaText")</h6>
+                <img src="@juvaImage" alt="">
+            </div>
+            <div class="report-suggestions">
+                <h4>@Model?.Value("juvaSuggestionHeadline")</h4>
+                <ul>
+                    <li>@Model?.Value("juvaSuggestionList1")</li>
+                    <li>@Model?.Value("juvaSuggestionList2")</li>
+                    <li>@Model?.Value("juvaSuggestionList3")</li>
+                </ul>
+            </div>
+            <div class="report-section1">
+                <img src="@juvaSection1Image" alt="">
+                <div class="report-text">
+                    <h4>@Model?.Value("juvaSection1Headline")</h4>
+                    <p>@Model?.Value("juvaSection1Text1")</p>
+                    <p>@Model?.Value("juvaSection1Text2")</p>
+                </div>
+            </div>
+            <div class="report-section2">
+                <div class="report-text">
+                    <h4>@Model?.Value("juvaSection2Headline")</h4>
+                    <p>@Model?.Value("juvaSection2Text1")</p>
+                    <p>@Model?.Value("juvaSection2Text2")</p>
+                    <p><p>@Model?.Value("juvaSection2Text3")</p></p>
+                </div>
+                <img src="@juvaSection2Image" alt="">
+            </div>
+            <div class="report-section3">
+                <div class="report-text">
+                    <h4>@Model?.Value("juvaSection3Headline")</h4>
+                    <p>@Model?.Value("juvaSection3Text1")</p>
+                    <p>@Model?.Value("juvaSection3Text2")</p>
+                </div>
+            </div>
+            <div class="report-tags">
+                <p>@Model?.Value("juvaTagsText")</p>
+                <a href="" class="btn-secondary btn">@Model?.Value("juvaTagsButton1Text")</a>
+                <a href="" class="btn-secondary btn">@Model?.Value("juvaTagsButton2Text")</a>
+                <a href="" class="btn-secondary btn">@Model?.Value("juvaTagsButton3Text")</a>
+            </div>
+        </div>
+    </div>                   
+</section>
+<section class="our-contact bg-gray">
+    <div class="container">
+        <img src="@contactImage" alt="">
+        <div class="contact">
+            <h2>@Model?.Value("contactHeadline")</h2>
+            <div class="contact-info">
+                <p><span><i class="fa-solid fa-location-dot"></i></span>@Model?.Value("contactTextOffice")</p>
+                <p class="cursive-text">@Model?.Value("contactLocation")</p>
+            </div>
+            <div class="contact-info">
+                <p><span><i class="fa-solid fa-phone-flip"></i></span>@Model?.Value("contactTextPhone")</p>
+                <p class="cursive-text">@Model?.Value("contactPhone")</p>
+            </div>
+            <div class="contact-info">
+                <p><span><i class="fa-regular fa-envelope"></i></span>@Model?.Value("contactTextEmail")</p>
+                <p class="cursive-text">@Model?.Value("contactEmail")</p>
+            </div>
+        </div>
+    </div>
+</section>

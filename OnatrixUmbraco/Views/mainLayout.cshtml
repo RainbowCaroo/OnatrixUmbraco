@@ -4,13 +4,18 @@
 	Layout = null;
 	var keywordsList = Model.Value<IEnumerable<string>>("pageKeywords");
 	var keywords = keywordsList != null ? string.Join(", ", keywordsList) : "";
+	
+	var siteLogotype = Model?.Value<IPublishedContent>("siteLogotype")?.Url() ?? "";
 }
 
 <html>
 	<head>
 		<title>Onatrix | @ViewBag.Title</title>
-		<meta name="description" content="@Model.Value("pageDescription")">
+		<meta name="description" content="@Model?.Value("pageDescription")">
 		<meta name="keywords" content="@keywords">
+		<script defer src="https://kit.fontawesome.com/e5ae214cf1.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="/css/scss/main.css">
+		<link rel="stylesheet" href="/css/scss/colors/theme.css">
 	</head>
 	<body>
 		<header>
@@ -27,9 +32,9 @@
 			<div class="navbar bg-light">
 				<div class="container">
 					<a class="logo" href="/">
-						<img src="/images/logotype">
+						<img src="@siteLogotype">
 					</a>
-					<nav>
+					<nav class="menu">
 						<a class="nav-link" href="/about">About</a>
 						<a class="nav-link" href="/services">Services</a>
 						<a class="nav-link" href="/projects">Projects</a>

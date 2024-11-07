@@ -1,0 +1,80 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model.Value("pageTitle");
+
+    var contactImage = Model?.Value<IPublishedContent>("contactImage")?.Url() ?? "";
+    var contactFormImage = Model?.Value<IPublishedContent>("contactFormImage")?.Url() ?? "";
+    var brandImage1 = Model?.Value<IPublishedContent>("brandImage1")?.Url() ?? "";
+	var brandImage2 = Model?.Value<IPublishedContent>("brandImage2")?.Url() ?? "";
+	var brandImage3 = Model?.Value<IPublishedContent>("brandImage3")?.Url() ?? "";
+	var brandImage4 = Model?.Value<IPublishedContent>("brandImage4")?.Url() ?? "";
+	var brandImage5 = Model?.Value<IPublishedContent>("brandImage5")?.Url() ?? "";
+	var brandImage6 = Model?.Value<IPublishedContent>("brandImage6")?.Url() ?? "";
+}
+
+<section class="page-header bg-gray">
+    <div class="container">
+        <h2>@Model?.Value("headlineHeadline")</h2>
+        <div class="page-nav">
+            <p>@Model?.Value("headlineTextHome")</p>
+            <p>@Model?.Value("headlineArrow1")</p>
+            <span>@Model?.Value("headlineTextPage")</span>
+        </div>
+    </div>
+</section>
+<section class="our-contact">
+    <div class="container">
+        <img src="@contactImage" alt="">
+        <div class="contact">
+            <h2>@Model?.Value("contactHeadline")</h2>
+            <div class="contact-info">
+                <p><span><i class="fa-solid fa-location-dot"></i></span>@Model?.Value("contactTextOffice")</p>
+                <p class="cursive-text">@Model?.Value("contactLocation")</p>
+            </div>
+            <div class="contact-info">
+                <p><span><i class="fa-solid fa-phone-flip"></i></span>@Model?.Value("contactTextPhone")</p>
+                <p class="cursive-text">@Model?.Value("contactPhone")</p>
+            </div>
+            <div class="contact-info">
+                <p><span><i class="fa-regular fa-envelope"></i></span>@Model?.Value("contactTextEmail")</p>
+                <p class="cursive-text">@Model?.Value("contactEmail")</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact-us">
+    <img src="@contactFormImage" alt="">
+    <div class="container">
+        <div class="contact-form bg-light">
+            <div class="headline">
+                <h6>@Model?.Value("contactFormTitle")</h6>
+                <h2>@Model?.Value("contactFormHeadline")</h2>
+                <p>@Model?.Value("contactFormText")</p>
+            </div>
+            <form action="" class="form-grid">
+                <input type="text" placeholder="@Model?.Value("contactFormName")">
+                <input type="text" placeholder="@Model?.Value("contactFormPhone")">
+                <input type="email" placeholder="@Model?.Value("contactFormEmail")">
+                <input type="text" placeholder="@Model?.Value("contactFormConsulting")">
+                                
+            </form>
+            <div>
+                <a href="" class="btn-primary">@Model?.Value("contactFormButtonText")</a>                       
+            </div>
+        </div>
+    </div>
+</section>
+<section class="brands-section bg-light">
+    <div class="container">
+        <div class="brands">
+            <img src="@brandImage1" alt="">
+            <img src="@brandImage2" alt="">
+            <img src="@brandImage3" alt="">
+            <img src="@brandImage4" alt="">
+            <img src="@brandImage5" alt="">
+            <img src="@brandImage6" alt="">
+        </div>
+    </div>
+</section>

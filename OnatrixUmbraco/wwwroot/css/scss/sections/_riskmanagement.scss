@@ -1,0 +1,55 @@
+.riskmanagement {
+    .container {
+
+        .risk-content {
+            width: 70%;
+            justify-self: end;
+            border-left: 1px solid var(--color-gray);
+            padding-left: 3rem;
+            margin: 2rem 0;
+            padding-right: 0;
+            
+            img {
+                width: 100%;
+                padding: 2rem 0;
+            }
+            ul, li {
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+                list-style-position: outside;                
+            }
+            p {
+                padding-top: 1rem;
+            }
+
+        }
+
+        .risk-form {
+            padding: 3rem 0;
+            form {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: "name email" 
+                                     "area area";
+                gap: 1rem;
+                padding-bottom: 1rem;
+            }
+
+
+            #form-name {
+                grid-area: name;
+            }
+
+            #form-email {
+                grid-area: email;
+            }
+
+            #form-area {
+                grid-area: area;
+                
+            }
+            
+        }
+        
+    }
+}

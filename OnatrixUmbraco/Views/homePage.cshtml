@@ -12,9 +12,18 @@
 	var box4Image = Model?.Value<IPublishedContent>("box4Image")?.Url() ?? "";
 	var box5Image = Model?.Value<IPublishedContent>("box5Image")?.Url() ?? "";
 	var box6Image = Model?.Value<IPublishedContent>("box6Image")?.Url() ?? "";
+	var trustedImage = Model?.Value<IPublishedContent>("trustedImage")?.Url() ?? "";
+	var successImage = Model?.Value<IPublishedContent>("successImage")?.Url() ?? "";
+	var brandImage1 = Model?.Value<IPublishedContent>("brandImage1")?.Url() ?? "";
+	var brandImage2 = Model?.Value<IPublishedContent>("brandImage2")?.Url() ?? "";
+	var brandImage3 = Model?.Value<IPublishedContent>("brandImage3")?.Url() ?? "";
+	var brandImage4 = Model?.Value<IPublishedContent>("brandImage4")?.Url() ?? "";
+	var brandImage5 = Model?.Value<IPublishedContent>("brandImage5")?.Url() ?? "";
+	var brandImage6 = Model?.Value<IPublishedContent>("brandImage6")?.Url() ?? "";
+			
 }
 
-<section id="hero-slider" class="hero">
+<section id="hero-slider" class="hero bg-gray">
 	<div class="background" style="background-image:url(@backgroundImage); background-size: cover; background-position: 60%;"></div>
 	<div class="container">		
 		<div class="hero-content">
@@ -29,7 +38,7 @@
                     
 <section id="about-us" class="about-us bg-light">
 	<div class="container">
-		<div class="content">
+		<div class="about-content">
 			<div class="headline">
 				<h6>@Model?.Value("aboutSectionTitle")</h6>
 				<h2>@Model?.Value("aboutHeadline")</h2>
@@ -45,14 +54,25 @@
 				</div>
 			</div>
 		</div>
-
-		<div class="form-container">
-			
-		</div>	
+		<div class="aboutus-form">
+            <div class="form-header bg-primary">
+                <h2>@Model?.Value("aboutFormHeader")</h2>
+            </div>
+            <div class="form-text">
+                <p>@Model?.Value("aboutFormText")</p>
+                <form action="" class="form-grid">
+                    <input type="text" placeholder="@Model?.Value("aboutFormPlaceholder1")">
+                    <input type="email" placeholder="@Model?.Value("aboutFormPlaceholder2")">
+                    <input type="text" placeholder="@Model?.Value("aboutFormPlaceholder3")">                                
+                    <input type="text" placeholder="@Model?.Value("aboutFormPlaceholder4")">  
+                    <a href="" class="btn-accent">@Model?.Value("aboutFormButtonText")</a>                              
+                </form>
+            </div>                            
+        </div>	
 	</div>
 </section>
 
-<section id="our-services" class="services bg-gray">
+<section id="our-services" class="our-services bg-gray">
 	<div class="container">
 		<div class="headline">
 			<h6>@Model?.Value("servicesTitle")</h6>
@@ -60,35 +80,95 @@
 		</div>
 		<div class="service-boxes">
 			<div class="box-content bg-light">
-				<h5>@Model?.Value("box1Headline")</h5>
-				<img src="@box1Image" alt=""> 
-				<p>@Model?.Value("box1Text")</p>
+				<a href="@Model?.Value("box1Url")">
+					<h5>@Model?.Value("box1Headline")</h5>
+					<img src="@box1Image" alt=""> 
+					<p>@Model?.Value("box1Text")</p>
+				</a>
 			</div>
 			<div class="box-content bg-light">
-				<h5>@Model?.Value("box2Headline")</h5>
-				<img src="@box2Image" alt=""> 
-				<p>@Model?.Value("box2Text")</p>
+				<a href="@Model?.Value("box2Url")">
+					<h5>@Model?.Value("box2Headline")</h5>
+					<img src="@box2Image" alt=""> 
+					<p>@Model?.Value("box2Text")</p>
+				</a>
 			</div>
 			<div class="box-content bg-light">
-				<h5>@Model?.Value("box3Headline")</h5>
-				<img src="@box3Image" alt=""> 
-				<p>@Model?.Value("box3Text")</p>
+				<a href="@Model?.Value("box3Url")">
+					<h5>@Model?.Value("box3Headline")</h5>
+					<img src="@box3Image" alt=""> 
+					<p>@Model?.Value("box3Text")</p>
+				</a>
 			</div>
 			<div class="box-content bg-light">
-				<h5>@Model?.Value("box4Headline")</h5>
-				<img src="@box4Image" alt=""> 
-				<p>@Model?.Value("box4Text")</p>
+				<a href="@Model?.Value("box4Url")">
+					<h5>@Model?.Value("box4Headline")</h5>
+					<img src="@box4Image" alt=""> 
+					<p>@Model?.Value("box4Text")</p>
+				</a>
 			</div>
 			<div class="box-content bg-light">
-				<h5>@Model?.Value("box5Headline")</h5>
-				<img src="@box5Image" alt=""> 
-				<p>@Model?.Value("box5Text")</p>
+				<a href="@Model?.Value("box5Url")">
+					<h5>@Model?.Value("box5Headline")</h5>
+					<img src="@box5Image" alt=""> 
+					<p>@Model?.Value("box5Text")</p>
+				</a>
 			</div>
 			<div class="box-content bg-light">
-				<h5>@Model?.Value("box6Headline")</h5>
-				<img src="@box6Image" alt=""> 
-				<p>@Model?.Value("box6Text")</p>
+				<a href="@Model?.Value("box6Url")">
+					<h5>@Model?.Value("box6Headline")</h5>
+					<img src="@box6Image" alt=""> 
+					<p>@Model?.Value("box6Text")</p>
+				</a>
 			</div>
 		</div>                
 	</div>
+</section>
+
+<section class="trusted bg-light">
+    <div class="container">
+        <div class="trusted-info">
+			<h2>@Model?.Value("trustedHeadline") <span>@Model?.Value("trustedHeadlineSpan")</span></h2>
+			<p>@Model?.Value("trustedText")</p>
+			<a href="@Model?.Value("trustedButtonUrl")" class="btn-primary">@Model?.Value("trustedButtonText")</a>
+        </div>
+        <img src="@trustedImage" alt="">
+    </div>
+</section>
+
+<section class="success bg-primary">
+    <div class="container">
+        <div class="headline">
+			<h6>@Model?.Value("successTitle")</h6>
+			<h2>@Model?.Value("successHeadline")</h2>
+        </div>
+        <div class="success-info">
+            <div class="success-box">
+				<h1>@Model?.Value("successBox1Number")</h1>
+				<h5>@Model?.Value("successBox1Text")</h5>
+            </div>
+            <div class="success-box">
+				<h1>@Model?.Value("successBox2Number")</h1>
+				<h5>@Model?.Value("successBox2Text")</h5>
+            </div>
+            <div class="success-box">
+				<h1>@Model?.Value("successBox3Number")</h1>
+				<h5>@Model?.Value("successBox3Text")</h5>
+            </div>
+        </div>
+        <img src="@successImage" alt="">
+    </div>
+</section>
+
+<section class="brands-section bg-light">
+    <div class="container">
+        <div class="brands">
+            <img src="@brandImage1" alt="">
+            <img src="@brandImage2" alt="">
+            <img src="@brandImage3" alt="">
+            <img src="@brandImage4" alt="">
+            <img src="@brandImage5" alt="">
+            <img src="@brandImage6" alt="">
+        </div>
+    </div>
 </section>

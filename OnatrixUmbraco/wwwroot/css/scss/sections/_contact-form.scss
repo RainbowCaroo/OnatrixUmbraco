@@ -1,0 +1,33 @@
+.contact-us {
+position: relative;
+
+    .container {
+        position: absolute;
+        bottom: -150px;
+        left: 350px;
+        padding: 0;
+        box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.2);
+
+        .contact-form {
+            padding: 3rem;
+            .headline {
+                justify-self: center;
+                text-align: center;
+                width: 45%;
+            }
+
+            .form-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+                
+            }
+            a {
+                display: flex;
+                justify-self: center;
+                align-self: center;
+                margin-top: 1rem;
+            }
+        }
+    }
+}

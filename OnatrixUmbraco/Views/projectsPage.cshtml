@@ -1,0 +1,92 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model.Value("pageTitle");
+
+    var contactImage = Model?.Value<IPublishedContent>("contactImage")?.Url() ?? "";
+    var projectBox1Image = Model?.Value<IPublishedContent>("projectBox1Image")?.Url() ?? "";
+    var projectBox2Image = Model?.Value<IPublishedContent>("projectBox2Image")?.Url() ?? "";
+    var projectBox3Image = Model?.Value<IPublishedContent>("projectBox3Image")?.Url() ?? "";
+    var projectBox4Image = Model?.Value<IPublishedContent>("projectBox4Image")?.Url() ?? ""; 
+}
+
+
+<section class="page-header bg-gray">
+    <div class="container">
+        <h2>@Model?.Value("headlineHeadline")</h2>
+        <div class="page-nav">
+            <p>@Model?.Value("headlineTextHome")</p>
+            <p>@Model?.Value("headlineArrow1")</p>
+            <span>@Model?.Value("headlineTextPage")</span>
+        </div>
+    </div>
+</section>
+<section class="our-projects">
+    <div class="container">
+        <div class="project-content">
+            <div class="project-box">
+                <img src="@projectBox1Image" alt="">
+                <div class="project-text">
+                    <h4>@Model?.Value("projectBox1Headline")</h4>
+                    <p class="date"><i class="fa-regular fa-calendar-days"></i>@Model?.Value("projectBox1Date")</p>
+                    <p>@Model?.Value("projectBox1Text")</p>
+                    <a href="@Model?.Value("projectBox1ButtonUrl")">@Model?.Value("projectBox1ButtonText") <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="project-box">
+                <img src="@projectBox2Image" alt="">
+                <div class="project-text">
+                    <h4>@Model?.Value("projectBox2Headline")</h4>
+                    <p class="date"><i class="fa-regular fa-calendar-days"></i>@Model?.Value("projectBox2Date")</p>
+                    <p>@Model?.Value("projectBox1Text")</p>
+                    <a href="@Model?.Value("projectBox2ButtonUrl")">@Model?.Value("projectBox2ButtonText") <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="project-box">
+                <img src="@projectBox3Image" alt="">
+                <div class="project-text">
+                    <h4>@Model?.Value("projectBox3Headline")</h4>
+                    <p class="date"><i class="fa-regular fa-calendar-days"></i>@Model?.Value("projectBox3Date")</p>
+                    <p>@Model?.Value("projectBox1Text")</p>
+                    <a href="@Model?.Value("projectBox3ButtonUrl")">@Model?.Value("projectBox3ButtonText") <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="project-box">
+                <img src="@projectBox4Image" alt="">
+                <div class="project-text">
+                    <h4>@Model?.Value("projectBox4Headline")</h4>
+                    <p class="date"><i class="fa-regular fa-calendar-days"></i>@Model?.Value("projectBox4Date")</p>
+                    <p>@Model?.Value("projectBox1Text")</p>
+                    <a href="@Model?.Value("projectBox4ButtonUrl")">@Model?.Value("projectBox4ButtonText") <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="project-pages">
+                <span>Prev</span>
+                <a href="">1</a>
+                <a href="">2</a>
+                <p>Next</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="our-contact bg-gray">
+    <div class="container">
+        <img src="@contactImage" alt="">
+        <div class="contact">
+            <h2>@Model?.Value("contactHeadline")</h2>
+            <div class="contact-info">
+                <p><span><i class="fa-solid fa-location-dot"></i></span>@Model?.Value("contactTextOffice")</p>
+                <p class="cursive-text">@Model?.Value("contactLocation")</p>
+            </div>
+            <div class="contact-info">
+                <p><span><i class="fa-solid fa-phone-flip"></i></span>@Model?.Value("contactTextPhone")</p>
+                <p class="cursive-text">@Model?.Value("contactPhone")</p>
+            </div>
+            <div class="contact-info">
+                <p><span><i class="fa-regular fa-envelope"></i></span>@Model?.Value("contactTextEmail")</p>
+                <p class="cursive-text">@Model?.Value("contactEmail")</p>
+            </div>
+        </div>
+    </div>
+</section>
